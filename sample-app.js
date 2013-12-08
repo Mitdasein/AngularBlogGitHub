@@ -1,5 +1,5 @@
 
-var app = angular.module('plunker', []);
+var app = angular.module('blog', []);
 var isLoggedIn;
 
 app.controller('MainCtrl', function($scope) {
