@@ -1,11 +1,43 @@
 {
-  "name"         : "node-blog",
-  "version"      : "0.0.0",
+  "name"         : "plunker",
   "description"  : "Simple blog application.",
-  "main"         : "server.js",
-  "author"       : "Sean Scott",
-  "dependencies" : {
-    "express"    : "~3.4.4",
-    "mongoose"   : "~3.6.2"
+  "version"      : "0.0.0",
+  "homepage"     : "https://github.com/Mitdasein/AngularBlogGitHub",
+  "keywords": [
+    "blog",
+    "angular.js",
+    "node.js",
+    "mongodb"
+],
+"repository": {
+  "type": "git",
+    "url": "https://github.com/Mitdasein/AngularBlogGitHub.git"
+  },
+  "author": {
+    "name": "Sean Scott",
+    "email": "sean.scott@gmail.com",
+    "url": "https://twitter.com/mitdasein"
+},
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Mitdasein/AngularBlogGitHub/blob/master/LICENSE"
   }
-}
+  ],
+  "main": "server.js",
+  "engines": {
+    "node": ">= 0.6.x"
+  },
+    "devDependencies": {},
+    "dependencies" : {
+        "express"    : "~3.4.4",
+        "mongoose"   : "~3.6.2"
+  },
+  "private": false,
+  "scripts": {
+    "dist": "node dist; node_modules/.bin/doccoh src/package.js"
+  },
+  "readme": "Readme file, yoinked from jeremy obsborne\n",
+  "readmeFilename": "README.md",
+  }
+  
