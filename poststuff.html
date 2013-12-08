@@ -1,0 +1,82 @@
+
+Posts are documents
+"Posts" is a collection of documents
+
+db.posts.insert
+
+
+> db.foo.batchInsert(
+[
+{"_id" : 0}, 
+{"_id" : 1}, 
+{"_id" : 1}, 
+{"_id" : 2}
+]
+)
+
+> var joe = db.users.findOne({"name" : "joe"});
+BlogPostController($scope)
+
+
+var collection = db.collection('posts');
+
+{
+	"_id" : ObjectId(" "),
+	"date" : 
+	"title" : "   "
+	"content" : "   "
+	"comment" : "   "
+}
+
+
+Schema for comments, one document per comment
+{
+	_id: ObjectId(...)
+	discussion_id: ObjectId(...)
+	slug: "34db"
+	posted: ISODateTime(...)
+	author: {
+		id: ObjectId(...)
+		name: 'Rick'
+		},
+	text: 'This is so bogus...'
+}
+
+
+
+
+
+<body ng-controller='CartController'> <h1>Your Order</h1>
+<div ng-repeat='item in items'>
+<span>{{item.title}}</span>
+<input ng-model='item.quantity'>
+<span>{{item.price | currency}}</span> <span>{{item.price * item.quantity | currency}}</span> <button ng-click="remove($index)">Remove</button>
+</div>
+<script src="angular.js"></script> <script>
+function CartController($scope) { $scope.items = [
+            {title: 'Paint pots', quantity: 8, price: 3.95},
+            {title: 'Polka dots', quantity: 17, price: 12.95},
+            {title: 'Pebbles', quantity: 5, price: 6.95}
+];
+
+
+/* based on tamas.io contact manager */
+function AddPostController($scope, $http, $location)
+	$scope.form = {};
+	$scope.addPost = function () {
+		$http.post('/post', $scope.form).
+			success(function(data) {
+				$location.path('/');
+			});
+		};
+	}
+
+{{newPost}}
+
+
+
+
+
+
+
+

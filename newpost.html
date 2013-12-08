@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- based on docs.angularjs.org/cookbook/form -->
+<html>
+
+
+	<head>
+		<!-- <script src="http://code.angularjs.org/1.2.3/angular.min.js"></script> -->
+		<script src="angular.min.js"></script>
+		<!-- <script src="angular-bootstrap.min.js"></script> -->
+		<script src="css/bootstrap.min.css"></script>
+		<!-- <script src="./js/angular-ui-bootstrap-modal.js "></script> -->
+		<!-- <script src="../angular-ui-bootstrap-modal.js "></script> -->
+		<!-- <script src="angular-ui-bootstrap-modal.js "></script>  -->
+		<!-- <script src="ui-bootstrap-tpls-0.4.0.js"></script> -->
+		<!-- <script src="js/ui-bootstrap-tpls-0.4.0.js"></script> -->
+		<!-- <script src="./js/ui-bootstrap-tpls-0.4.0.js"></script> -->
+		<!-- <script src="/js/ui-bootstrap-tpls-0.4.0.js"></script> -->
+		<script src="script.js"></script>
+		</head>	
+	<body>
+
+
+	<div>
+		<form ng-app="createPost" ng-controller="FormController" class="post">
+			Post title:<br>
+				<input type="text" ng-model="post.title" size="50" placeholder="Post title." required /><br>
+			Post body:<br>
+				<textarea rows="20" cols="70" ng-model="post.content" placeholder="Write your post here." required></textarea><br>
+					<!-- Auto-size or scroll? --> 
+					<!-- Fixed-width, or 100% with uniform padding on the div? -->
+			Category:<br>
+				<div class= "dropdown" ng-controller="DropdownCtrl">
+					<a class = "dropdown-toggle">
+						Select a category:
+    				</a>
+						<ul class="dropdown-menu">
+        					<li ng-repeat="choice in categories">
+            					<a>{{choice}}</a>
+          					</li>
+       				 	</ul> <!-- end of dropdown-menu -->
+  				</div> <!-- end of dropdown class --> 
+  		</form> <!--  end of FormController --> 
+</div> <!-- end of createPost div -->
+
+
+	</body>
+</html>
