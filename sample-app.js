@@ -1,10 +1,9 @@
 
 var app = angular.module('blog', []);
-var isLoggedIn;
 
 app.controller('MainCtrl', function($scope) {
   $scope.name = 'World';
-
+  $scope.isLoggedIn = false;
   $scope.myusers = [{
     username: 'user1',
     password: '12323'
@@ -18,6 +17,8 @@ app.controller('MainCtrl', function($scope) {
       var pass = $scope.password;
       alert("welcome" + user);
      /* ng-show="isLoggedIn"; */
+
+     $scope.isLoggedIn = true;
 
       $scope.myusers.push({
         username: user,
