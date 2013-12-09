@@ -44,7 +44,7 @@
                     <li ng-repeat="user in myusers">
                         <a>{{curUser}}{{user.username}}</a>
                     </li>
-                </ul>-->			
+                </ul>-->                        
                 </div> <!-- close isLoggedIn-->
             </div> <!-- close loginArea -->              
         </div> <!-- close float:left -->
@@ -68,7 +68,11 @@
                                     <ng:form name="postForm">
                                         <label>Post:</label>
                                         <br>
-                                        <input type="text" name="postBody" size="33" required ng:model="form.post.postBody">
+                                        <!-- <input type="text" name="postBody" size="33" required ng:model="form.post.postBody">
+                                        <br> -->
+                                        <textarea name="postBody" cols="50" rows="10">
+                                         
+                                        </textarea><br>
                                         <br>
                                         <label>Tags:</label>
                                         <br>
@@ -114,4 +118,4 @@
  <textarea rows="10" cols="50" name="newPost" placeholder="Write your post here."  ></textarea>
     <br>
     <input type="submit" value="Post">
-  </form>                                                 -->
+  </form>                
