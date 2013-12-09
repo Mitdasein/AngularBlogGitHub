@@ -15,8 +15,8 @@ app.controller('MainCtrl', function($scope) {
     if ($scope.username && $scope.password) {
       var user = $scope.username;
       var pass = $scope.password;
-      alert("welcome" + user);
-     /* ng-show="isLoggedIn"; */
+      /* alert("welcome" + user); */
+      /* ng-show="isLoggedIn"; */
 
      $scope.isLoggedIn = true;
 
