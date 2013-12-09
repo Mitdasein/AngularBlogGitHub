@@ -5,7 +5,7 @@
         <title>Sean Learns Code</title>
         <script>document.write('<base href="' + document.location + '" />');</script>
         <link href="style.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" data-require="angular.js@1.0.x" data-semver="1.0.8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js" data-require="angular.js@1.0.x" data-semver="1.0.8">
         </script>
         <script src="../sample-app.js"></script>
         <!-- <script src="../composePostFormCntl.js"> </script> -->
@@ -20,80 +20,80 @@
         <div id="header">
             <center> 
                 <h1>Sean Learns To Code</h1>
-                    <h3>I'm building a blog and doing other things with code and putting them here.<h3>
+                    <h3>I'm building a blog and doing other things with code and putting them here.</h3>
                     <h4>Come in, stay a while.</h4>
             </center>
         </div> <!-- close header div -->
         <hr>
-            <div id="block">
-                <div style="width:25%; float:left;">
-                    <div id="loginArea">Log in:
-                         <form>
-                            <ul ng-hide="isLoggedIn">
-                                <!-- figure proper naming/syntax -->
-                                <label>Username:</label><input type="text" ng-model="username" /></br></br>
-                                <label>Password:</label><input type="password" ng-model="password"></br>
-                                <button type="submit" ng-click="submit()">login</button>
-                            </ul> <!--isLoggedIn -->
-                        </form>
-                            
-                            <div ng-show="isLoggedIn">
-                            <h3>Welcome, <a ng-show>{{curUser}}</a></h3>
+        <div id="block">
+            <div style="width:25%; float:left;">
+                <div id="loginArea">Log in:
+                     <form>
+                        <ul ng-hide="isLoggedIn">
+                            <!-- figure proper naming/syntax -->
+                            <label>Username:</label><input type="text" ng-model="username"><br><br>
+                            <label>Password:</label><input type="password" ng-model="password"><br>
+                            <button type="submit" ng-click="submit()">login</button>
+                        </ul> <!--isLoggedIn -->
+                    </form>
+                        
+                        <!-- JL: removed div opening tag, wasn't necessary, and was unclosed -->
+                    <h3 ng-show="isLoggedIn">Welcome, <a >{{curUser}}</a></h3>
 <!-- Displaying the Array using ng-repeat 
                 <ul>
                     <li ng-repeat="user in myusers">
                         <a>{{curUser}}{{user.username}}</a>
                     </li>
                 </ul>-->			
-            </div> <!-- close isLoggedIn-->
-        </div> <!-- close loginArea -->              
-    </div> <!-- close float:left -->
+                </div> <!-- close isLoggedIn-->
+            </div> <!-- close loginArea -->              
+        </div> <!-- close float:left -->
 
     
 
-    <div style="width:70%; float:right;">        
-        <div class="rightContainer">
-            <div ng-show="isLoggedIn">
-                <div id="ComposeNewPost">
-                    <div ng:app>
-                        <!-- <div ng:controller="composePostFormCntl">-->
-                            <form name="composePostForm">
-                                <label>Post title:</label>
-                                <br/>
-                                <input type="text" name="postTitle" ng:model="form.postTitle" required/> 
-                                    <!--
-                                    <span class="error" ng:show="composePostForm.postTitle.$error.REQUIRED">Post title is required!</span>
-                                    -->
-                                    <br/><br/>
-                                <ng:form name="postForm">
-                                    <label>Post:</label>
-                                    <br/>
-                                    <input type="text" name="postBody" size="33" required ng:model="form.post.postBody" />
-                                    <br/>
-                                    <label>Tags:</label>
-                                    <br/>
-                                    <input type="text" name="tags" size="33" ng:model="form.post.tags" />,
-                                    <br/>
-                                    <label>Category:</label>
-                                    <br/>
-                                    <input type="text" name="category" ng:pattern="category" size="33" ng:model="form.post.category" />
-                                </ng:form> <!-- close postForm -->
-                                    <button ng:click="cancel()" ng:disabled="{{isCancelDisabled()}}">Cancel</button>
-                                    <button ng:click="save()" ng:disabled="{{isSaveDisabled()}}">Save</button>
-                            </form> <!-- close composePostForm -->
-                        <!-- </div> <!- close composePostFormcntl -->
-                    </div> <!-- close ng:app -->
-                </div> <!-- <! closing compose div -->
-            </div> <!-- end of isLoggedIn -->
-                                        
-            <div class="recentPosts">
-                <p>Recent Posts:</p>
-                <p>
-                    <!--{{Display posts}}-->
-                </p>
-            </div> <!-- close recent posts -->
-        </div> <!-- end of rightContainer div -->      
-    </div> <!-- closing right div -->
+        <div style="width:70%; float:right;">        
+            <div class="rightContainer">
+                <div ng-show="isLoggedIn">
+                    <div id="ComposeNewPost">
+                        <div><!-- ng:app-->
+                            <!-- <div ng:controller="composePostFormCntl">-->
+                                <form name="composePostForm">
+                                    <label>Post title:</label>
+                                    <br>
+                                    <input type="text" name="postTitle" ng:model="form.postTitle" required="1"> 
+                                        <!--
+                                        <span class="error" ng:show="composePostForm.postTitle.$error.REQUIRED">Post title is required!</span>
+                                        -->
+                                        <br><br>
+                                    <ng:form name="postForm">
+                                        <label>Post:</label>
+                                        <br>
+                                        <input type="text" name="postBody" size="33" required ng:model="form.post.postBody">
+                                        <br>
+                                        <label>Tags:</label>
+                                        <br>
+                                        <input type="text" name="tags" size="33" ng:model="form.post.tags">,
+                                        <br>
+                                        <label>Category:</label>
+                                        <br>
+                                        <input type="text" name="category" size="33" ng:model="form.post.category">
+                                    </ng:form> <!-- close postForm -->
+                                        <button ng:click="cancel()" ng:disabled="{{isCancelDisabled()}}">Cancel</button>
+                                        <button ng:click="save()" ng:disabled="{{isSaveDisabled()}}">Save</button>
+                                </form> <!-- close composePostForm -->
+                            <!-- </div> <!- close composePostFormcntl -->
+                        </div> <!-- close ng:app -->
+                    </div> <!-- <! closing compose div -->
+                </div> <!-- end of isLoggedIn -->
+                                            
+                <div class="recentPosts">
+                    <p>Recent Posts:</p>
+                    <p>
+                        <!--{{Display posts}}-->
+                    </p>
+                </div> <!-- close recent posts -->
+            </div> <!-- end of rightContainer div -->      
+        </div> <!-- closing right div -->
 
     </div> <!-- closing block div -->
 </div> <!-- closing container div -->

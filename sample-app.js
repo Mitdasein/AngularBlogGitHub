@@ -23,15 +23,15 @@ app.controller('MainCtrl', function($scope) {
       /* ng-show="isLoggedIn"; */
 
      $scope.isLoggedIn = true;
-     $scope.curUser = 'user';
-
+     $scope.curUser = user;
+     console.log('MARK');
       /*$scope.myusers.push({
         username: user,
         password: pass 
-      });
+      });*/
     } else {
       alert("Invalid Login");
-    } */
+    } 
   }
 });
 
