@@ -1,0 +1,40 @@
+<div ng:app>
+    <div ng:controller="composePostFormCntl">
+        <form name="composePostForm">
+            <label>Post title:</label>
+            <br/>
+            <input type="text" name="postTitle" ng:model="form.postTitle" required/> <span class="error" ng:show="composePostForm.postTitle.$error.REQUIRED">
+       Post title is required!</span>
+
+            <br/>
+            <br/>
+            <ng:form name="postForm">
+                <label>Post:</label>
+                <br/>
+                <input type="text" name="postBody" size="33" required ng:model="form.post.postBody" />
+                <br/>
+                <input type="text" name="tags" size="33" ng:model="form.post.tags" />,
+                <input type="text" name="category" ng:pattern="category" size="33" ng:model="form.post.category" />
+                <!-- <span class="error" ng:show="postForm.$invalid">
+         Incomplete address:
+         <span class="error" ng:show="postForm.state.$error.REQUIRED">
+           Missing state!</span>
+         <span class="error" ng:show="postForm.state.$error.PATTERN">
+           Invalid state!</span>
+         <span class="error" ng:show="postForm.zip.$error.REQUIRED">
+           Missing zip!</span>
+         <span class="error" ng:show="postForm.zip.$error.PATTERN">
+           Invalid zip!</span>
+       </span> 
+      -->
+            </ng:form>
+            <button ng:click="cancel()" ng:disabled="{{isCancelDisabled()}}">Cancel</button>
+            <button ng:click="save()" ng:disabled="{{isSaveDisabled()}}">Save</button>
+        </form>
+        <hr/>Debug View: <pre>form={{form}}</pre>
+ <pre>master={{master}}</pre>
+ <pre>composePostForm={{composePostForm}}</pre>
+ <pre>postForm={{postForm}}</pre>
+
+    </div>
+</div>
