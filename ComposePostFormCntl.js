@@ -1,14 +1,23 @@
-function ComposePostFormCntl() {
+/*
+ *  JL: there are a few issues here I fixed.
+ *  
+ *  1) the first property of the post object below had no id (I've added title as the id)
+ *  2) the tags property had an id that was partly in parens, which is invalid
+ *  3) this.master had three dashes after the semicolon, which would have threw a syntax error. Removed.
+ *  4) the name of the function was in title case, but elsewhere you have it in camel case.
+ */ 
+function composePostFormCntl() {
     // this.state = /^\w\w$/;
     // this.zip = /^\d\d\d\d\d$/;
     this.master = {
         postTitle: 'Post title',
-        post: {: 'Write post here',
-            tags(separated by commas): 'tag1, tag2',
-            Category: 'Category',
+        post: {
+            title: 'Write post here',
+            tags: 'tag1, tag2',
+            Category: 'Category'
             // zip:'12345'
         }
-    };———
+    };
     this.cancel();
 }
 
