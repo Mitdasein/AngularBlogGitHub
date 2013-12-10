@@ -35,6 +35,23 @@ app.controller('MainCtrl', function($scope) {
   }
 });
 
+function MyCntrl($scope) {
+  $scope.categories = [
+    {name:'Kitties'}, // shade:'dark'},
+    {name:'Doggies'}, // shade:'dark'}, shade:'light'},
+    {name:'Code'}, 
+    {name:'Krautrock'},// shade:'dark'}, shade:'dark'},
+    {name:'Sharknados'}, // shade:'dark'},, shade:'dark'},
+    {name:'Tacos'}, // shade:'dark'},, shade:'light'}
+    {name:'Suckling Pigs'}, 
+    {name:'Mermaids'}, 
+    {name:'Innumerable Ones'}, 
+    {name:'Goulash'}, 
+    {name:'More Tacos'}, 
+  ];
+  $scope.category = $scope.categories[2]; // red
+}
+
 /*
 function ComposePostFormCntl() {
     // this.state = /^\w\w$/;
@@ -49,7 +66,8 @@ function ComposePostFormCntl() {
     };———
     this.cancel();
 }
-
+*/
+/*
 composePostFormCntl.prototype = {
     cancel: function () {
         this.form = angular.copy(this.master);
