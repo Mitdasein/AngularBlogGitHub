@@ -8,7 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js" data-require="angular.js@1.0.x" data-semver="1.0.8">
         </script>
         <script src="../sample-app.js"></script>
-        <!-- <script src="../composePostFormCntl.js"> </script> -->
+        <script src="../composePostFormCntl.js"> </script> 
         
         <script src="composePostFormCntl.js"> </script>
         <script src="core.js"></script>
@@ -49,8 +49,6 @@
             </div> <!-- close loginArea -->              
         </div> <!-- close float:left -->
 
-    
-
         <div style="width:70%; float:right;">        
             <div class="rightContainer">
                 <div ng-show="isLoggedIn">
@@ -64,7 +62,7 @@
                                         <!--
                                         <span class="error" ng:show="composePostForm.postTitle.$error.REQUIRED">Post title is required!</span>
                                         -->
-                                        <br><br>
+                                        <br>
                                     <ng:form name="postForm">
                                         <label>Post:</label>
                                         <br>
@@ -72,15 +70,20 @@
                                         <br> -->
                                         <textarea name="postBody" cols="50" rows="10">
                                          
-                                        </textarea><br>
-                                        <br>
+                                        </textarea>
+                                            <br>
                                         <label>Tags:</label>
                                         <br>
-                                        <input type="text" name="tags" size="33" ng:model="form.post.tags">,
+                                        <input type="text" name="tags" size="33" ng:model="form.post.tags">
                                         <br>
                                         <label>Category:</label>
-                                        <br>
-                                        <input type="text" name="category" size="33" ng:model="form.post.category">
+                                            <div ng-controller="MyCntrl">
+                                                <span class="nullable">
+                                                    <select ng-model="category" ng-options="c.name for c in categories">
+                                                        <option value="">-- choose category --</option>
+                                                    </select>
+                                                </span><br/>
+                                            </div>
                                     </ng:form> <!-- close postForm -->
                                         <button ng:click="cancel()" ng:disabled="{{isCancelDisabled()}}">Cancel</button>
                                         <button ng:click="save()" ng:disabled="{{isSaveDisabled()}}">Save</button>
