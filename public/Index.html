@@ -12,6 +12,7 @@
         
         <script src="composePostFormCntl.js"> </script>
         <script src="core.js"></script>
+        
 
 </head>
 <body ng-controller="MainCtrl"> 
@@ -39,6 +40,7 @@
                         
                         <!-- JL: removed div opening tag, wasn't necessary, and was unclosed -->
                     <h3 ng-show="isLoggedIn">Welcome, <a >{{curUser}}</a></h3>
+                    <div my-widget="Hello World"></div>
 <!-- Displaying the Array using ng-repeat 
                 <ul>
                     <li ng-repeat="user in myusers">
@@ -104,8 +106,18 @@
 
     </div> <!-- closing block div -->
 </div> <!-- closing container div -->
+<script>
+var app = angular.module("MyApp", []);
 
-
+app.directive("myWidget", function() {
+    return {
+        restrict: "E",
+        transclude: true,
+        template: "<div> ng-transclude>
+        <h3>Heading</h3></div>"
+    };
+});
+</script>
 </body>
 </html>
 
